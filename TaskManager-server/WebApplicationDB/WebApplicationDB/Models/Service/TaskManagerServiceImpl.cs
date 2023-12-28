@@ -145,11 +145,6 @@ namespace WebApplicationDB.Models.Service
                     {
                         dateToUpdate.EndDateTime = DateTime.Today;
                         
-                        // When a task is marked as ended, I check if the task is set to repeat.
-                        // If the task is set to repeat,
-                        // I create a new task with a start time that corresponds to the current time when the last task ended.
-                        // If you wish to stop the repetition, you should delete the last task before completing them.
-
                         if(existingTask.IsRepeated && isActive )
                         {
                             addNewTask(ConvertTaskDtoToNewTaskDto(existingTask));
